@@ -1,8 +1,9 @@
 import express from 'express'
-import ClassController from './controllers/ClassController'
+import ClassesController from './controllers/ClassesController'
 
 const routes = express.Router()
 
-routes.post('/classes', ClassController.create)
+routes.get('/classes', ClassesController.index)
+routes.post('/classes', ClassesController.create)
 
 export default routes
