@@ -13,6 +13,10 @@ import heartIcon from '../../assets/images/icons/heart.png'
 const Landing: React.FC = () => {
   const { navigate } = useNavigation()
 
+  const handleNavigateToStudyPages = () => {
+    navigate('Study')
+  }
+
   const handleNavigateToGiveClassesPage = () => {
     navigate('GiveClasses')
   }
@@ -27,7 +31,10 @@ const Landing: React.FC = () => {
       </Text>
 
       <View style={styles.buttonContainer}>
-        <RectButton style={[styles.button, styles.buttonPrimary]}>
+        <RectButton
+          style={[styles.button, styles.buttonPrimary]}
+          onPress={handleNavigateToStudyPages}
+        >
           <Image source={studyIcon} />
 
           <Text style={styles.buttonText}>Estudar</Text>
@@ -35,7 +42,7 @@ const Landing: React.FC = () => {
 
         <RectButton
           style={[styles.button, styles.buttonSecondary]}
-          onPress={() => handleNavigateToGiveClassesPage()}
+          onPress={handleNavigateToGiveClassesPage}
         >
           <Image source={giveClassesIcon} />
 
